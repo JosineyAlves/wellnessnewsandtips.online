@@ -10,37 +10,65 @@
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/ab-test/694aeee87fac75e58d230d9e/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://m3u8.vturb.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
+		<link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/ab-test/694aeee87fac75e58d230d9e/player.js" as="script">
+		<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+		<link rel="dns-prefetch" href="https://cdn.converteai.net">
+		<link rel="dns-prefetch" href="https://scripts.converteai.net">
+		<link rel="dns-prefetch" href="https://images.converteai.net">
+		<link rel="dns-prefetch" href="https://m3u8.vturb.net">
+		<link rel="dns-prefetch" href="https://api.vturb.com.br">
+		<!-- SmartPlayer SDK - Carregado apenas UMA VEZ para evitar conflitos -->
 		<script>
-  const link = 'https://everydaywellnessguide.online/kary/back/';
-
-  function setBackRedirect(url) {
-    let urlBackRedirect = url;
-    urlBackRedirect = urlBackRedirect =
-      urlBackRedirect.trim() +
-      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
-      document.location.search.replace('?', '').toString();
-
-    history.pushState({}, '', location.href);
-    history.pushState({}, '', location.href);
-    history.pushState({}, '', location.href);
-
-    window.addEventListener('popstate', () => {
-      console.log('onpopstate', urlBackRedirect);
-      setTimeout(() => {
-        location.href = urlBackRedirect;
-      }, 1);
-    });
-  }
-
-  setBackRedirect(link);
-</script>
+			(function() {
+				var sdkUrl = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+				var existingScript = document.querySelector('script[src="' + sdkUrl + '"]');
+				if (!existingScript) {
+					var s = document.createElement("script");
+					s.src = sdkUrl;
+					s.async = true;
+					s.defer = true;
+					document.head.appendChild(s);
+				}
+			})();
+		</script>
+		<script>
+			const link = 'https://everydaywellnessguide.online/kary/back/';
+			 
+			function setBackRedirect(url) {
+			  let urlBackRedirect = url;
+			  urlBackRedirect = urlBackRedirect =
+				urlBackRedirect.trim() +
+				(urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+				document.location.search.replace('?', '').toString();
+			 
+			  history.pushState({}, '', location.href);
+			  history.pushState({}, '', location.href);
+			  history.pushState({}, '', location.href);
+			 
+			  // Intercepta cliques em links para ignorar âncoras
+			  document.addEventListener('click', function(e) {
+				var target = e.target.closest('a');
+				if (target && target.getAttribute('href') && target.getAttribute('href').startsWith('#')) {
+				  // Permite navegação normal para links de âncora
+				  return true;
+				}
+			  }, true);
+			 
+			  window.addEventListener('popstate', function(e) {
+				// Ignora popstate se for navegação de âncora
+				if (location.hash) {
+				  return;
+				}
+				console.log('onpopstate', urlBackRedirect);
+				setTimeout(() => {
+				  location.href = urlBackRedirect;
+				}, 1);
+			  });
+			}
+			 
+			setBackRedirect(link);
+			 
+		</script>
 		<script>
 			window.pixelId = "69442f99e95dbc262ca5c823";
 			var a = document.createElement("script");
@@ -61,10 +89,10 @@
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CM9JYLBCSZ"></script>
 		<script>
- 		 window.dataLayer = window.dataLayer || [];
- 		 function gtag(){dataLayer.push(arguments);}
- 		 gtag('js', new Date());		
- 		 gtag('config', 'G-CM9JYLBCSZ');
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());		
+			gtag('config', 'G-CM9JYLBCSZ');
 		</script>
 	</head>
 	<body>
@@ -79,7 +107,8 @@
 		<main class="pdh center">
 			<div class="container">
 				<h1>Watch the full video below:</h1>
-				<vturb-smartplayer id="ab-69443f7076990ab694f41bcc" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/ab-test/69443f7076990ab694f41bcc/player.js", s.async=!0,document.head.appendChild(s); </script>
+				<vturb-smartplayer id="ab-69443f7076990ab694f41bcc" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
+				<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/ab-test/69443f7076990ab694f41bcc/player.js", s.async=!0,document.head.appendChild(s); </script>
 			</div>
 		</main>
 		<div class="esconder">
@@ -409,16 +438,28 @@
 					</span>
 					<div class="videos-grid">
 						<div class="video-card">
-							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_694b57a887bdd2a5aeac9194_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a887bdd2a5aeac9194_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a887bdd2a5aeac9194" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a887bdd2a5aeac9194/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> 
+							<div id="ifr_694b57a887bdd2a5aeac9194_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+								<div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a887bdd2a5aeac9194_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a887bdd2a5aeac9194" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a887bdd2a5aeac9194/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div>
+							</div>
 						</div>
 						<div class="video-card">
-							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_694b57a190b70171e37ca1f2_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a190b70171e37ca1f2_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a190b70171e37ca1f2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a190b70171e37ca1f2/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> 
+							<div id="ifr_694b57a190b70171e37ca1f2_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+								<div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a190b70171e37ca1f2_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a190b70171e37ca1f2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a190b70171e37ca1f2/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div>
+							</div>
 						</div>
 						<div class="video-card">
-							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_694b57aca54e8f46c188cfd4_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57aca54e8f46c188cfd4_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57aca54e8f46c188cfd4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57aca54e8f46c188cfd4/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> 
+							<div id="ifr_694b57aca54e8f46c188cfd4_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+								<div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57aca54e8f46c188cfd4_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57aca54e8f46c188cfd4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57aca54e8f46c188cfd4/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div>
+							</div>
 						</div>
 						<div class="video-card">
-							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_694b57a4f757812677c36523_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a4f757812677c36523_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a4f757812677c36523" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a4f757812677c36523/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+							<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> 
+							<div id="ifr_694b57a4f757812677c36523_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+								<div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_694b57a4f757812677c36523_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_694b57a4f757812677c36523" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/694b57a4f757812677c36523/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div>
+							</div>
 						</div>
 					</div>
 					<a href="#kits" class="btn">Order Now</a>
@@ -855,18 +896,17 @@
 		<script src="assets/js/main.js"></script>
 		<style>
 			.esconder {
-			  display: non;
+			display: none;
 			}
-		  </style>
-		  
-		  <script>
+		</style>
+		<script>
 			var listPitch = {
-			  '6942f0daf10935ae385277b2': { delay: 20, utm: 'utm_content=vslA' },
-			  '6942f0a67639f40940e85da2': { delay: 15, utm: 'utm_content=vslB' }
+			  '694aee9eb6c0dcc467226950': { delay: 2320, utm: 'utm_content=vslA' },
+			  '694aee9bb6c0dcc467226936': { delay: 1672, utm: 'utm_content=vslB' }
 			};
-		  
+			 
 			var alreadyInitialized = false;
-		  
+			 
 			var updateLinksWithUTM = function(utmParam) {
 			  var links = document.querySelectorAll('a[href]:not([href*="#"])');
 			  var separator = '?';
@@ -879,25 +919,26 @@
 				link.href = baseUrl + queryString;
 			  }
 			};
-		  
+			 
 			document.addEventListener('player:ready', function(event) {
 			  if (alreadyInitialized) return;
-		  
+			 
 			  var detail = event.detail || {};
 			  var config = detail.config || {};
 			  var player = detail.player || document.querySelector('vturb-smartplayer');
 			  var playerId = config.id;
 			  var pitchConfig = listPitch[playerId];
-		  
+			 
 			  if (!playerId || !pitchConfig) return;
-		  
+			 
 			  alreadyInitialized = true;
-		  
+			 
 			  player.displayHiddenElements(pitchConfig.delay, ['.esconder'], { persist: true });
 			  //updateLinksWithUTM(pitchConfig.utm);
 			});
-		  </script>
-		  <script>
+			 
+		</script>
+		<script>
 			(function () {
 			  const POLL_MS = 500;
 			
@@ -948,6 +989,6 @@
 				if (applyUtmIfNeeded()) clearInterval(interval);
 			  }, POLL_MS);
 			})();
-			</script>
+		</script>
 	</body>
 </html>
